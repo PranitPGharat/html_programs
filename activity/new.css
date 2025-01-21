@@ -1,0 +1,89 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Navbar styles */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color:#3B0B42; /* Navy blue */
+    color: #fff;
+    height: 70px;
+  }
+  
+  .logo img {
+    height: 50px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links li {
+    display:inline;
+  }
+
+  .navbar .hostel {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    animation: pulse 1s infinite alternate;
+}
+  @keyframes pulse {
+    from {
+        font-size: 9px;
+    }
+    to {
+        font-size: 13px;
+    }
+}
+.navbar .social-buttons {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+    justify-content: flex-start;
+}
+.navbar .social-buttons a {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+.navbar .social-buttons a:hover {
+    background-color: #888;
+}
+ .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #ffd700; /* Gold */
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .nav-links {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  

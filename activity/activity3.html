@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Basics</title>
+</head>
+<body>
+  <h1>JavaScript Basics Demo</h1>
+  <div id="output"></div>
+
+  <script>
+    // Single-line comment: This is a demonstration of JavaScript syntax.
+
+    /*
+      Multi-line comment: 
+      The following code demonstrates variable declarations, 
+      data types, and output methods in JavaScript.
+    */
+
+    // Declare variables of different data types
+    let name = "Alice"; // String
+    let age = 30; // Number
+    let isStudent = true; // Boolean
+    let hobbies = ["Reading", "Traveling", "Coding"]; // Array
+    let address = { city: "New York", zip: 10001 }; // Object
+
+    // Output information to the console
+    console.log("Name:", name);
+    console.log("Age:", age);
+    console.log("Is Student:", isStudent);
+    console.log("Hobbies:", hobbies);
+    console.log("Address:", address);
+
+    // Output information to the document
+    document.getElementById("output").innerHTML = `
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Age:</strong> ${age}</p>
+      <p><strong>Is Student:</strong> ${isStudent}</p>
+      <p><strong>Hobbies:</strong> ${hobbies.join(", ")}</p>
+      <p><strong>Address:</strong> ${address.city}, ZIP: ${address.zip}</p>
+    `;
+  </script>
+</body>
+</html>

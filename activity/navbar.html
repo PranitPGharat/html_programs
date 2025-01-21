@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Navbar</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            width: 1263px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #333;
+            
+            color: white;
+            position: relative;
+            flex-direction: column;
+        }
+        .navbar .top {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .logo img {
+            height: 50px;
+        }
+        .navbar .links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        .navbar .links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .navbar .links a:hover {
+            text-decoration: underline;
+        }
+        .navbar .hostel {
+            position: absolute;
+            right: 10px;
+            top: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            animation: pulse 1s infinite alternate;
+        }
+        @keyframes pulse {
+            from {
+                font-size: 14px;
+            }
+            to {
+                font-size: 18px;
+            }
+        }
+        .navbar .social-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            justify-content: flex-end;
+        }
+        .navbar .social-buttons a {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #555;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .navbar .social-buttons a:hover {
+            background-color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="top">
+            <div class="logo">
+                <img src="college-logo.png" alt="College Logo">
+            </div>
+            <div class="hostel">HOSTEL FACILITY AVAILABLE</div>
+        </div>
+        <div class="links">
+            <a href="#">RTI</a>
+            <a href="#">First Year Admissions</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="social-buttons">
+            <a href="#" title="Facebook">
+                <img src="facebook-icon.svg" alt="Facebook" width="16" height="16">
+            </a>
+            <a href="#" title="YouTube">
+                <img src="youtube-icon.svg" alt="YouTube" width="16" height="16">
+            </a>
+            <a href="#" title="Phone">
+                <img src="phone-icon.svg" alt="Phone" width="16" height="16">
+            </a>
+            <a href="#" title="LinkedIn">
+                <img src="linkedin-icon.svg" alt="LinkedIn" width="16" height="16">
+            </a>
+            <a href="#" title="Instagram">
+                <img src="instagram-icon.svg" alt="Instagram" width="16" height="16">
+            </a>
+        </div>
+        
+    </div>
+</body>
+</html>

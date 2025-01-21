@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Operators Demo</title>
+</head>
+<body>
+  <h1>JavaScript Operators Demo</h1>
+  <div id="output"></div>
+
+  <script>
+    // Prompt user for input values
+    let a = parseFloat(prompt("Enter the first number (a):", "10"));
+    let b = parseFloat(prompt("Enter the second number (b):", "3"));
+
+    // Arithmetic Operators
+    console.log("Addition:", a + b);
+    console.log("Subtraction:", a - b);
+    console.log("Multiplication:", a * b);
+    console.log("Division:", a / b);
+    console.log("Modulus:", a % b);
+    console.log("Exponentiation:", a ** b);
+
+    // Comparison Operators
+    console.log("Equal to:", a == b);
+    console.log("Not equal to:", a != b);
+    console.log("Strict equal to:", a === b);
+    console.log("Strict not equal to:", a !== b);
+
+    // Logical Operators
+    let x = confirm("Is the first condition true? (OK for true, Cancel for false)");
+    let y = confirm("Is the second condition true? (OK for true, Cancel for false)");
+    console.log("Logical AND:", x && y);
+    console.log("Logical OR:", x || y);
+    console.log("Logical NOT:", !x);
+
+    // Assignment Operators
+    let c = parseFloat(prompt("Enter a number for assignment operations (c):", "5"));
+    c += 2; // Equivalent to c = c + 2
+    console.log("c after += 2:", c);
+    c -= 3; // Equivalent to c = c - 3
+    console.log("c after -= 3:", c);
+
+    // Ternary Operator
+    let age = parseInt(prompt("Enter your age:", "20"));
+    let eligibility = (age >= 18) ? "Eligible" : "Not Eligible";
+    console.log("Ternary Operator Result:", eligibility);
+
+    // Bitwise Operators
+    let d = parseInt(prompt("Enter the first number for bitwise operations (d):", "5"));
+    let e = parseInt(prompt("Enter the second number for bitwise operations (e):", "3"));
+    console.log("Bitwise AND:", d & e); // 0101 & 0011 = 0001
+    console.log("Bitwise OR:", d | e);  // 0101 | 0011 = 0111
+    console.log("Bitwise XOR:", d ^ e); // 0101 ^ 0011 = 0110
+    console.log("Bitwise NOT:", ~d);   // ~0101 = 1010 (inverted bits)
+
+    // Output all results to the document
+    document.getElementById("output").innerHTML = `
+      <h2>Check the Console for Detailed Operator Demonstration</h2>
+      <p>User-provided inputs have been used to perform Arithmetic, Comparison, Logical, Assignment, Ternary, and Bitwise operations. Results are logged in the console.</p>
+    `;
+  </script>
+</body>
+</html>
