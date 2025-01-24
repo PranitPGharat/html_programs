@@ -1,24 +1,24 @@
 const Employee=require("../model/Employee")
 
 //post or insert
-const createEmployee = async(request,response)=>{
+const createEmployee=async(request,response)=>{
     try{
-        const{name,email,phone}=request.body;
-        const employee=new Employee({
-            name,
-            email,
-            phone
-        })
-        await employee.save();
-        response.status(201).json({message:"Employee document inserted successfully"})
+       const{name,email,phone}=request.body;
+       const employee=new Employee({
+        name,
+        email,
+        phone
+       })
+       await employee.save();
+       response.status(201).json({message:"Employee Document insrted successfully"})
     }
-    catch(err){
-        console.log(err);
-        response.status(500).json({message:"server error"})
+    catch(error){
+        console.log(error);
+        response.status(500).json({message:"Server error"})
     }
 }
 
-//get or fetch
+//get or fetch   here we fetch all the documents
 const getEmployees=async(request,response)=>{
     try{
         const employees=await Employee.find();
@@ -26,9 +26,10 @@ const getEmployees=async(request,response)=>{
     }
     catch(err){
         console.log(err)
-        response.status(501).json({message:"server issue error"})
+        response.status(501).json({message:"Server issue error"})
     }
 }
+//get or fetch only one document
 const getEmployee=async(request,response)=>{
     try{
         const employee=await Employee.findById(request.params.id);
@@ -43,4 +44,38 @@ const getEmployee=async(request,response)=>{
     }
 }
 
-module.exports={createEmployee,getEmployees,getEmployee};
+//update or put
+const updateEmployee=async(request,response)=>{
+    try{
+        const{name,email,phone}=request.body;
+        const myEmployee=await Employee.findByIdAndUpdate(request.params.id,
+        {name,email,phone}
+        )
+        if(!myEmployee)
+        {
+            return response.status(404).json({message:"Employee document is not updated"})
+        }
+        response.status(200).json(myEmployee);
+
+    }
+    catch(err){
+        console.log(err);
+        response.status(501).json({message:"Server related error"})
+    }
+}
+const deleteEmployee = async (request, response) => {
+    try {
+        const employee = await Employee.findByIdAndDelete(request.params.id);
+
+        if (!employee) {
+            return response.status(404).json({ message: "Employee document does not exist or already deleted" });
+        }
+
+        response.status(200).json({ message: "Employee document deleted successfully" });
+    } catch (error) {
+        console.log(error);
+        response.status(500).json({ message: "Server related error" });
+    }
+};
+
+module.exports = { createEmployee, getEmployees, getEmployee, updateEmployee, deleteEmployee };
